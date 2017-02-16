@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Web.UI.HtmlControls;
 
 namespace budgetTracker
 {
@@ -15,8 +16,8 @@ namespace budgetTracker
 
         }
         //Declaring variables
-        static int i = 1;
-        static int j = 1;
+        static int expenseKey = 1;
+        //static int j = 1;
 
         //upon clicking save salary button the number in the text box will be stored in a label
         protected void saveSalaryButton_Click(object sender, EventArgs e)
@@ -25,7 +26,7 @@ namespace budgetTracker
             salaryInput.Text = String.Empty;
         }
 
-        //This function adds a new label for every expense
+        /*//This function adds a new label for every expense
         private void addExpenseNameLabel()
         {
             Label lbl = new Label();
@@ -44,6 +45,19 @@ namespace budgetTracker
             lbl.Text = "$" + expenseAmountInput.Text;
             this.Controls.Add(lbl);
             j++;
+        }*/
+
+        private void addExpense()
+        {
+            HtmlTableRow row = new HtmlTableRow();
+            HtmlTableCell cell1 = new HtmlTableCell();
+            HtmlTableCell cell2 = new HtmlTableCell();
+            row.ID = "exp"+expenseKey;
+            cell1.InnerText = expenseNameInput.Text;
+            row.Cells.Add(cell1);
+            cell2.InnerText = "$" + expenseAmountInput.Text;
+            row.Cells.Add(cell2);
+            tableExpenses.Rows.Add(row);
         }
 
         //This function updates the remianing monthly budget
@@ -60,8 +74,9 @@ namespace budgetTracker
 
         protected void addExpenseButton_Click(object sender, EventArgs e)
         {
-            addExpenseNameLabel();
-            addExpenseAmountLabel();
+            //addExpenseNameLabel();
+            //addExpenseAmountLabel();
+            addExpense();
             updateRemainingBudget();
         }
     }

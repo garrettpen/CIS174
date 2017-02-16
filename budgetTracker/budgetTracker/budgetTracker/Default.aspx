@@ -7,6 +7,8 @@
     <title>Budget Tracker</title>
     <link rel="stylesheet" type="text/css" href="content/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="content/custom.css">
+    <script src="Scripts/jquery-1.9.1.min.js"></script>
+    <script src="Scripts/main.js"></script>
 </head>
 <div class="container">
     <div class="page-header">
@@ -31,12 +33,10 @@
         <asp:Button ID="addExpenseButton" runat="server" class="btn btn-primary btn-space" Text="Add Expense" OnClick="addExpenseButton_Click" />
 
     </div>
-    <div>
-
-        <asp:Label ID="expenseLabel" runat="server" Text="Expense"></asp:Label>
-        <asp:Label ID="amountLabel" runat="server" Text="Amount"></asp:Label>
-
-    </div>
+        <table id="tableExpenses" class="table table-hover" runat="server">
+            <tbody>
+            </tbody>
+        </table>
     </form>
 </div>
 </div>
