@@ -1,0 +1,27 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="garrettPenfieldUnit6.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Royal Inn and Suites</title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+                        <form id="form1" runat="server">
+            <div class="container">
+                <div id="page-header">
+                    <h1 style="color: blue;">Royal Inn and Suites</h1>
+                    <div style="color: red; font-style: italic;">
+                        Where you're always treated like royalty
+                    </div>
+                </div>
+                <h3 style="color: blue;">Reservation Request</h3>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+
+                </asp:ContentPlaceHolder>
+            </div>
+    </form>
+</body>
+</html>
