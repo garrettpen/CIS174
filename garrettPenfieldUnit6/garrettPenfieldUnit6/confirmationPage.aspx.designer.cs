@@ -10,7 +10,7 @@
 namespace garrettPenfieldUnit6 {
     
     
-    public partial class confirmationPage {
+    public partial class ConfirmationPage {
         
         /// <summary>
         /// firstName control.

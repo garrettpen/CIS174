@@ -16,7 +16,7 @@ namespace garrettPenfieldUnit6
             singleKingButton.Checked = true;
             arrivalDateBox.Text = DateTime.Today.ToShortDateString();
             //if postback (modify button on confirmation page is clicked) load all previous selected information
-            if (PreviousPage != null)
+            /*if (PreviousPage != null)
             {
                 Label arrivalDate = (Label)PreviousPage.FindControl("arrivalDate");
                 arrivalDateBox.Text = arrivalDate.Text.Substring(0, 9);
@@ -58,14 +58,14 @@ namespace garrettPenfieldUnit6
                 {
                     singleQueenButton.Checked = true;
                 }
-            }
-        }
 
-        Reservation newReservation = new Reservation();
+            }*/
+        }
 
         //When submit button is clicked save data into object, then save object into session state
         protected void submitButton_Click(object sender, EventArgs e)
         {
+            Reservation newReservation = new Reservation();
             int dropDown;
             int.TryParse(peopleDropDown.SelectedValue, out dropDown);
             newReservation.ArrivalDate = Convert.ToDateTime(arrivalDateBox.Text);
